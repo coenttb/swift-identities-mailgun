@@ -8,8 +8,9 @@
 import Foundation
 import IdentitiesTypes
 import Mailgun_Messages_Types
-import CoenttbEmail
-import CoenttbHTML
+import HTMLEmail
+import HTML
+import HTMLWebsite
 import ServerFoundation
 
 // MARK: - Deletion Request Notification
@@ -46,7 +47,7 @@ extension Mailgun.Messages.Send.Request {
                                 )
                             }
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "We hebben een verzoek ontvangen om je \(business.name) account permanent te verwijderen. Dit verzoek wordt binnen 30 dagen verwerkt.",
                                     english: "We received a request to permanently delete your \(business.name) account. This request will be processed within 30 days."
@@ -55,7 +56,7 @@ extension Mailgun.Messages.Send.Request {
                             .padding(bottom: .extraSmall)
                             .font(.body)
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "Let op: Deze actie kan niet ongedaan worden gemaakt. Alle accountgegevens, instellingen en bijbehorende informatie zullen permanent worden verwijderd.",
                                     english: "Please note: This action cannot be undone. All account data, settings, and associated information will be permanently deleted."
@@ -65,7 +66,7 @@ extension Mailgun.Messages.Send.Request {
                             .font(.body)
                             .color(.text.warning)
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "Als je dit verzoek hebt gedaan, hoef je verder niets te doen. Je ontvangt een bevestiging zodra je account is verwijderd.",
                                     english: "If you made this request, no further action is needed. You will receive a confirmation once your account has been deleted."
@@ -74,7 +75,7 @@ extension Mailgun.Messages.Send.Request {
                             .padding(bottom: .extraSmall)
                             .font(.body)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Als je dit verzoek niet hebt gedaan of als je van gedachten bent veranderd, neem dan onmiddellijk contact op met ons via \(business.supportEmail) om het verwijderingsproces te stoppen.",
                                     english: "If you didn't request this or if you've changed your mind, please contact us immediately at \(business.supportEmail) to stop the deletion process."
@@ -126,7 +127,7 @@ extension Mailgun.Messages.Send.Request {
                                 )
                             }
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "We bevestigen dat je \(business.name) account en alle bijbehorende gegevens permanent zijn verwijderd volgens je verzoek.",
                                     english: "We confirm that your \(business.name) account and all associated data have been permanently deleted as requested."
@@ -135,7 +136,7 @@ extension Mailgun.Messages.Send.Request {
                             .padding(bottom: .extraSmall)
                             .font(.body)
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "Alle persoonlijke informatie, instellingen en accountgegevens zijn verwijderd uit onze systemen.",
                                     english: "All personal information, settings, and account data have been removed from our systems."
@@ -144,7 +145,7 @@ extension Mailgun.Messages.Send.Request {
                             .padding(bottom: .extraSmall)
                             .font(.body)
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "We vinden het jammer je te zien gaan. Als je in de toekomst weer gebruik wilt maken van \(business.name), ben je altijd welkom om een nieuw account aan te maken.",
                                     english: "We're sorry to see you go. If you'd like to use \(business.name) again in the future, you're always welcome to create a new account."
@@ -153,7 +154,7 @@ extension Mailgun.Messages.Send.Request {
                             .padding(bottom: .extraSmall)
                             .font(.body)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Als je vragen hebt of als je dit verzoek niet hebt gedaan, neem dan contact op met ons via \(business.supportEmail).",
                                     english: "If you have any questions or if you didn't make this request, please contact us at \(business.supportEmail)."

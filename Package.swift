@@ -19,8 +19,9 @@ extension Target.Dependency {
     static var mailgun: Self { .product(name: "Mailgun", package: "swift-mailgun") }
     static var mailgunMessages: Self { .product(name: "Mailgun Messages", package: "swift-mailgun") }
     static var dependencies: Self { .product(name: "Dependencies", package: "swift-dependencies") }
-    static var coenttbEmail: Self { .product(name: "CoenttbEmail", package: "coenttb-html") }
-    static var coenttbHTML: Self { .product(name: "CoenttbHTML", package: "coenttb-html") }
+    static var HTMLEmail: Self { .product(name: "HTMLEmail", package: "swift-html") }
+    static var html: Self { .product(name: "HTML", package: "swift-html") }
+    static var htmlWebsite: Self { .product(name: "HTMLWebsite", package: "swift-html") }
     static var serverFoundation: Self { .product(name: "ServerFoundation", package: "swift-server-foundation") }
 }
 
@@ -39,7 +40,7 @@ let package = Package(
         .package(url: "https://github.com/coenttb/swift-identities", from: "0.0.1"),
         .package(url: "https://github.com/coenttb/swift-mailgun", from: "0.0.1"),
         .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.9.2"),
-        .package(url: "https://github.com/coenttb/coenttb-html", branch: "main"),
+        .package(url: "https://github.com/coenttb/swift-html", from: "0.5.0"),
         .package(url: "https://github.com/coenttb/swift-server-foundation", from: "0.0.1")
     ],
     targets: [
@@ -50,8 +51,9 @@ let package = Package(
                 .identities,
                 .mailgun,
                 .mailgunMessages,
-                .coenttbEmail,
-                .coenttbHTML,
+                .HTMLEmail,
+                .html,
+                .htmlWebsite,
                 .serverFoundation
             ]
         ),

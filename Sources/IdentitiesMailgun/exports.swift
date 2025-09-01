@@ -9,5 +9,5 @@
 @_exported import Identity_Backend
 @_exported import Mailgun_Messages_Types
 @_exported import ServerFoundation
-@_exported import CoenttbEmail
-@_exported import CoenttbHTML
+@_exported import HTMLEmail
+@_exported import HTML

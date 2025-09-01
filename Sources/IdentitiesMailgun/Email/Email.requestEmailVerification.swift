@@ -7,10 +7,10 @@
 
 import Foundation
 import IdentitiesTypes
-import CoenttbEmail
-import Boiler
+import HTMLEmail
 import Mailgun
-import CoenttbHTML
+import HTML
+import HTMLWebsite
 import ServerFoundation
 
 extension Mailgun.Messages.Send.Request {
@@ -46,7 +46,7 @@ extension Mailgun.Messages.Send.Request {
                                 )
                             }
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "Om de setup van je \(business.name) account te voltooien, bevestig alsjeblieft dat dit je e-mailadres is.",
                                     english: "To continue setting up your \(business.name) account, please verify that this is your email address."
@@ -64,7 +64,7 @@ extension Mailgun.Messages.Send.Request {
                             .color(.text.primary.reverse())
                             .padding(bottom: .medium)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Om veiligheidsredenen verloopt deze verificatielink binnen 24 uur.",
                                     english: "This verification link will expire in 24 hours for security reasons."
@@ -73,7 +73,7 @@ extension Mailgun.Messages.Send.Request {
                             .font(.footnote)
                             .color(.text.secondary)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Als je deze aanvraag niet hebt gedaan, kun je deze e-mail negeren.",
                                     english: "If you did not make this request, please disregard this email."
@@ -82,7 +82,7 @@ extension Mailgun.Messages.Send.Request {
                             .font(.footnote)
                             .color(.text.secondary)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Voor hulp, neem contact op met ons op via \(business.supportEmail).",
                                     english: "For help, contact us at \(business.supportEmail)."

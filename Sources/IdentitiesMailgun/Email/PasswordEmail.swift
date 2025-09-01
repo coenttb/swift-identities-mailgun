@@ -8,8 +8,9 @@
 import Foundation
 import IdentitiesTypes
 import Mailgun_Messages_Types
-import CoenttbEmail
-import CoenttbHTML
+import HTMLEmail
+import HTML
+import HTMLWebsite
 import ServerFoundation
 
 // MARK: - Password Reset Request
@@ -47,7 +48,7 @@ extension Mailgun.Messages.Send.Request {
                                 )
                             }
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "We hebben een verzoek ontvangen om het wachtwoord voor je \(business.name) account te resetten. Klik op de onderstaande knop om je wachtwoord te wijzigen.",
                                     english: "We received a request to reset the password for your \(business.name) account. Click the button below to change your password."
@@ -65,7 +66,7 @@ extension Mailgun.Messages.Send.Request {
                             .color(.text.primary.reverse())
                             .padding(bottom: .medium)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Om veiligheidsredenen verloopt deze link binnen 1 uur.",
                                     english: "This link will expire in 1 hour for security reasons."
@@ -74,7 +75,7 @@ extension Mailgun.Messages.Send.Request {
                             .font(.footnote)
                             .color(.text.secondary)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Als je geen wachtwoordreset hebt aangevraagd, kun je deze e-mail negeren.",
                                     english: "If you didn't request a password reset, you can ignore this email."
@@ -83,7 +84,7 @@ extension Mailgun.Messages.Send.Request {
                             .font(.footnote)
                             .color(.text.secondary)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Voor hulp, neem contact op met ons op via \(business.supportEmail).",
                                     english: "For help, contact us at \(business.supportEmail)."
@@ -135,7 +136,7 @@ extension Mailgun.Messages.Send.Request {
                                 )
                             }
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "We bevestigen dat je wachtwoord voor je \(business.name) account succesvol is gereset.",
                                     english: "We confirm that the password for your \(business.name) account has been successfully reset."
@@ -144,7 +145,7 @@ extension Mailgun.Messages.Send.Request {
                             .padding(bottom: .extraSmall)
                             .font(.body)
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "Je kunt nu inloggen met je nieuwe wachtwoord.",
                                     english: "You can now log in using your new password."
@@ -153,7 +154,7 @@ extension Mailgun.Messages.Send.Request {
                             .padding(bottom: .extraSmall)
                             .font(.body)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Als je deze wijziging niet hebt aangevraagd, neem dan onmiddellijk contact op met ons via \(business.supportEmail) om je account te beveiligen.",
                                     english: "If you didn't request this change, please contact us immediately at \(business.supportEmail) to secure your account."
@@ -205,7 +206,7 @@ extension Mailgun.Messages.Send.Request {
                                 )
                             }
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "We willen je informeren dat het wachtwoord voor je \(business.name) account zojuist is gewijzigd.",
                                     english: "We're writing to inform you that the password for your \(business.name) account has just been changed."
@@ -214,7 +215,7 @@ extension Mailgun.Messages.Send.Request {
                             .padding(bottom: .extraSmall)
                             .font(.body)
                             
-                            CoenttbHTML.Paragraph {
+                            HTMLComponents.Paragraph {
                                 TranslatedString(
                                     dutch: "Als je deze wijziging hebt aangevraagd, kun je deze e-mail als bevestiging beschouwen.",
                                     english: "If you requested this change, please consider this email as confirmation."
@@ -223,7 +224,7 @@ extension Mailgun.Messages.Send.Request {
                             .padding(bottom: .extraSmall)
                             .font(.body)
                             
-                            CoenttbHTML.Paragraph(.small) {
+                            HTMLComponents.Paragraph(.small) {
                                 TranslatedString(
                                     dutch: "Als je deze wijziging niet hebt aangevraagd, neem dan onmiddellijk contact op met ons via \(business.supportEmail) om je account te beveiligen.",
                                     english: "If you didn't request this change, please contact us immediately at \(business.supportEmail) to secure your account."
