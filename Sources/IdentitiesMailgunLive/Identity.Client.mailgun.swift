@@ -29,7 +29,7 @@ extension Identity.Client {
         business: BusinessDetails,
         router: AnyParserPrinter<URLRequestData, Identity.Route>,
         mfaConfiguration: Identity.MFA.TOTP.Configuration? = nil,
-        onIdentityCreationSuccess: @escaping @Sendable (_ identity: (id: UUID, email: EmailAddress)) async throws -> Void = { _ in }
+        onIdentityCreationSuccess: @escaping @Sendable (_ identity: (id: Identity.ID, email: EmailAddress)) async throws -> Void = { _ in }
     ) -> Self {
         @Dependency(\.mailgun) var mailgun
         @Dependency(\.logger) var logger

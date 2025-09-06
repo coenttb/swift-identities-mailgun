@@ -28,7 +28,7 @@ extension Identity.Client {
         router: AnyParserPrinter<URLRequestData, Identity.Route>,
         sendEmail: @escaping @Sendable (Mailgun.Messages.Send.Request) async throws -> Void,
         mfaConfiguration: Identity.MFA.TOTP.Configuration? = nil,
-        onIdentityCreationSuccess: @escaping @Sendable (_ identity: (id: UUID, email: EmailAddress)) async throws -> Void = { _ in }
+        onIdentityCreationSuccess: @escaping @Sendable (_ identity: (id: Identity.ID, email: EmailAddress)) async throws -> Void = { _ in }
     ) -> Self {
         return .live(
             sendVerificationEmail: { email, token in
