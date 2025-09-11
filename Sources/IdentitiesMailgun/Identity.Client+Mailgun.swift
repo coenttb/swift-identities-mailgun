@@ -28,6 +28,7 @@ extension Identity.Client {
         router: AnyParserPrinter<URLRequestData, Identity.Route>,
         sendEmail: @escaping @Sendable (Mailgun.Messages.Send.Request) async throws -> Void,
         mfaConfiguration: Identity.MFA.TOTP.Configuration? = nil,
+        oauthProviderRegistry: OAuthProviderRegistry? = nil,        
         onIdentityCreationSuccess: @escaping @Sendable (_ identity: (id: Identity.ID, email: EmailAddress)) async throws -> Void = { _ in }
     ) -> Self {
         return .live(
@@ -106,7 +107,8 @@ extension Identity.Client {
                 try await sendEmail(request)
             },
             onIdentityCreationSuccess: onIdentityCreationSuccess,
-            mfaConfiguration: mfaConfiguration
+            mfaConfiguration: mfaConfiguration,
+            oauthProviderRegistry: oauthProviderRegistry
         )
     }
 }
