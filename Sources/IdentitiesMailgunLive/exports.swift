@@ -7,4 +7,4 @@
 
 @_exported import IdentitiesMailgun
 @_exported import Dependencies
-@_exported import Mailgun
+@_exported import Mailgun_Messages

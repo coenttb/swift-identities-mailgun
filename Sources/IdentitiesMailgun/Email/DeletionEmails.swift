@@ -7,7 +7,7 @@
 
 import Foundation
 import IdentitiesTypes
-import Mailgun_Messages_Types
+import Mailgun_Messages
 import HTMLEmail
 import HTML
 import HTMLWebsite

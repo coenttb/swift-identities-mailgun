@@ -16,7 +16,6 @@ extension Target.Dependency {
 extension Target.Dependency {
     static var identitiesTypes: Self { .product(name: "IdentitiesTypes", package: "swift-identities-types") }
     static var identities: Self { .product(name: "Identity Backend", package: "swift-identities") }
-    static var mailgun: Self { .product(name: "Mailgun", package: "swift-mailgun") }
     static var mailgunMessages: Self { .product(name: "Mailgun Messages", package: "swift-mailgun") }
     static var dependencies: Self { .product(name: "Dependencies", package: "swift-dependencies") }
     static var HTMLEmail: Self { .product(name: "HTMLEmail", package: "swift-html") }
@@ -49,7 +48,6 @@ let package = Package(
             dependencies: [
                 .identitiesTypes,
                 .identities,
-                .mailgun,
                 .mailgunMessages,
                 .HTMLEmail,
                 .html,

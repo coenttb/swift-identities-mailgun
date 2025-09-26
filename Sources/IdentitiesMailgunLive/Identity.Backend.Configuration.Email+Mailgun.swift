@@ -29,12 +29,12 @@ extension Identity.Backend.Configuration.Email {
         router: any ParserPrinter<URLRequestData, Identity.Route>,
         sendEmail: (@Sendable (Mailgun.Messages.Send.Request) async throws -> Void)? = nil
     ) -> Self {
-        @Dependency(\.mailgun) var mailgun
+        @Dependency(Mailgun.Messages.self) var messages
         @Dependency(\.logger) var logger
 
         let sender = sendEmail ?? { request in
             do {
-                let response = try await mailgun.client.messages.send(request)
+                let response = try await messages.client.send(request)
                 logger.info("Email sent successfully", metadata: [
                     "messageId": "\(response.id)",
                     "to": "\(request.to.map(\.rawValue).joined(separator: ", "))"
