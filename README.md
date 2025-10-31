@@ -1,20 +1,23 @@
 # swift-identities-mailgun
 
-[![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://swift.org)
-[![License](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](https://github.com/coenttb/swift-identities-mailgun/releases)
+[![CI](https://github.com/coenttb/swift-identities-mailgun/workflows/CI/badge.svg)](https://github.com/coenttb/swift-identities-mailgun/actions/workflows/ci.yml)
+![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
 A Swift package that provides Mailgun email integration for [swift-identities](https://github.com/coenttb/swift-identities) authentication system.
 
 ## Overview
 
-This package bridges the gap between swift-identities authentication system and Mailgun email service, providing ready-to-use email templates for all identity-related communications:
+This package bridges the gap between swift-identities authentication system and Mailgun email service, providing ready-to-use email templates for all identity-related communications.
 
-- ✅ Email verification
-- 🔐 Password reset and change notifications
-- 📧 Email address change confirmations
-- 🗑️ Account deletion notifications
-- 🌍 Multi-language support (Dutch/English)
+## Features
+
+- Email verification with 24-hour expiration
+- Password reset and change notifications
+- Email address change confirmations
+- Account deletion notifications
+- Multi-language support (Dutch/English)
+- Type-safe HTML templates via swift-html
+- Dependency injection via swift-dependencies
 
 ## Installation
 
@@ -33,22 +36,22 @@ dependencies: [
 ```swift
 import IdentitiesMailgunLive
 import Dependencies
+import ServerFoundation
 
 // Configure your business details
 let business = BusinessDetails(
     name: "MyApp",
-    supportEmail: "support@myapp.com",
-    fromEmail: "noreply@myapp.com"
+    supportEmail: try EmailAddress("support@myapp.com"),
+    fromEmail: try EmailAddress("noreply@myapp.com")
 )
 
-// Create the identity client with Mailgun integration
-let identityClient = Identity.Client.mailgun(
+// Create the email configuration with Mailgun integration
+let emailConfig = Identity.Backend.Configuration.Email.mailgun(
     business: business,
     router: identityRouter
 )
 
-// The client will automatically use the Mailgun dependency
-// configured in your application
+// Use in your Identity.Backend.Configuration or Identity.Standalone.Configuration
 ```
 
 ### Development/Testing with Logging
@@ -56,7 +59,7 @@ let identityClient = Identity.Client.mailgun(
 For local development without sending actual emails:
 
 ```swift
-let identityClient = Identity.Client.mailgunLogging(
+let emailConfig = Identity.Backend.Configuration.Email.mailgunLogging(
     business: business,
     router: identityRouter
 )
@@ -68,7 +71,7 @@ let identityClient = Identity.Client.mailgunLogging(
 If you need more control over the email sending process:
 
 ```swift
-let identityClient = Identity.Client.mailgun(
+let emailConfig = Identity.Backend.Configuration.Email.mailgun(
     business: business,
     router: identityRouter,
     sendEmail: { request in
@@ -80,13 +83,7 @@ let identityClient = Identity.Client.mailgun(
 
 ## Email Templates
 
-All email templates are built using type-safe HTML DSL from `coenttb-html` and include:
-
-- Professional, responsive design
-- Multi-language support (Dutch/English)
-- Clear call-to-action buttons
-- Security notices where appropriate
-- Support contact information
+All email templates are built using type-safe HTML DSL from swift-html and include professional, responsive design with multi-language support, clear call-to-action buttons, security notices, and support contact information.
 
 ### Available Templates
 
@@ -133,7 +130,7 @@ Live implementation with dependency injection:
   - swift-identities
   - swift-mailgun
   - swift-dependencies
-  - coenttb-html
+  - swift-html
 
 ## Related Packages
 
