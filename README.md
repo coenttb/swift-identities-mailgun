@@ -135,6 +135,20 @@ Live implementation with dependency injection:
   - swift-dependencies
   - coenttb-html
 
+## Related Packages
+
+### Dependencies
+
+- [swift-html](https://github.com/coenttb/swift-html): The Swift library for domain-accurate and type-safe HTML & CSS.
+- [swift-identities](https://github.com/coenttb/swift-identities): The Swift library for identity authentication and management.
+- [swift-identities-types](https://github.com/coenttb/swift-identities-types): A Swift package with foundational types for authentication.
+- [swift-mailgun](https://github.com/coenttb/swift-mailgun): The Swift library for the Mailgun API.
+- [swift-server-foundation](https://github.com/coenttb/swift-server-foundation): A Swift package with tools to simplify server development.
+
+### Third-Party Dependencies
+
+- [pointfreeco/swift-dependencies](https://github.com/pointfreeco/swift-dependencies): A dependency management library for controlling dependencies in Swift.
+
 ## License
 
 This package follows the licensing structure of the coenttb ecosystem. See LICENSE file for details.
