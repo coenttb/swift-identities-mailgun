@@ -9,17 +9,17 @@ import Foundation
 import ServerFoundation
 
 public struct BusinessDetails: Sendable {
-    public let name: String
-    public let supportEmail: EmailAddress
-    public let fromEmail: EmailAddress
-    
-    public init(
-        name: String,
-        supportEmail: EmailAddress,
-        fromEmail: EmailAddress
-    ) {
-        self.name = name
-        self.supportEmail = supportEmail
-        self.fromEmail = fromEmail
-    }
+  public let name: String
+  public let supportEmail: EmailAddress
+  public let fromEmail: EmailAddress
+
+  public init(
+    name: String,
+    supportEmail: EmailAddress,
+    fromEmail: EmailAddress
+  ) {
+    self.name = name
+    self.supportEmail = supportEmail
+    self.fromEmail = fromEmail
+  }
 }
